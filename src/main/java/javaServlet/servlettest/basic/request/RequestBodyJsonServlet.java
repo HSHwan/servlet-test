@@ -7,7 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import javaServlet.servlettest.basic.RequestData;
+import javaServlet.servlettest.basic.TestData;
 import org.springframework.util.StreamUtils;
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class RequestBodyJsonServlet extends HttpServlet {
 
         System.out.println("messageBody = " + messageBody);
 
-        RequestData requestData = objectMapper.readValue(messageBody, RequestData.class);
+        TestData requestData = objectMapper.readValue(messageBody, TestData.class);
 
         System.out.println("requestData.username = " + requestData.getUsername());
         System.out.println("requestData.age = " + requestData.getAge());
